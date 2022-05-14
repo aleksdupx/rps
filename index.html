@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <style>
+        .n {
+            height: 100px;
+            width: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<script>
+    let playerName = "first";
+	let player1Status = null; 
+	let player2Status = null; 
+    document.addEventListener("keydown", function (event) {
+		if(playerName=="first") {
+			if(event.code=="KeyS"){
+				console.log("Игрок 1 нажимаю на S");
+				playerName = 'second';
+				player1Status = 'ножницы';
+                console.log(player1Status)
+			} 
+			else if(event.code=="KeyD"){
+				console.log("Игрок 1 нажимаю на D");
+				playerName = 'second';
+                player1Status = 'камень'
+                console.log(player1Status)
+			} 
+			else if(event.code=="KeyA"){
+				console.log("Игрок 1 нажимаю на A");
+				playerName = 'second';
+                player1Status = 'бумага'
+                console.log(player1Status)
+			} 
+			else {                                 
+				console.log("не та буква");
+			}	
+
+		} else if(playerName=="second") {
+			if(event.code=="KeyJ"){
+				console.log("Игрок 2 нажимаю на J");
+				playerName = "finish"
+                player2Status = 'ножницы'
+                console.log(player2Status)
+			} 
+			else if(event.code=="KeyK"){
+				console.log("Игрок 2 нажимаю на K");
+				playerName = "finish"
+                player2Status = 'камень'
+                console.log(player2Status)
+			} 
+			else if(event.code=="KeyL"){
+				console.log("Игрок 2 нажимаю на L");
+				playerName = "finish"
+                player2Status = 'бумага'
+                console.log(player2Status)
+			} 
+			else {                                 
+				console.log("не та буква");
+			}
+		}
+
+
+		if(playerName=="finish"){
+			console.log("конец игры");
+            setTimeout(divReaction, 5)
+            setTimeout(gameResult, 100)
+		}
+	})
+    let divReaction = function() {
+        if(player1Status == 'ножницы'){
+            
+    }
+</script>
+</body>
+</html>
